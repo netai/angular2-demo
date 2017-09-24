@@ -10,13 +10,13 @@ import { ModelService } from '../../services/model.service';
 })
 
 export class UserListComponent implements OnInit{
-	
-	public users: UserModel = new UserModel;
-    
+
+	public users: UserModel[] = [];
+
     constructor(private ms: ModelService){
-    	this.users = ms.UserService.Users;
+    	this.users = ms.us.users;
     }
 
-	ngOnInit(){}
+		ngOnInit(){}
 
 }

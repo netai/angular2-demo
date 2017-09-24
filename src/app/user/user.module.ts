@@ -9,7 +9,9 @@ import { ModelService } from './services/model.service';
 
 import { routing } from './user.routing';
 import { UserComponent } from './user.component';
+
 import { UserListComponent } from './components/user-list/user-list.component';
+import { AddUserComponent } from './components/add-user/add-user.component';
 
 @NgModule({
     imports: [
@@ -20,7 +22,8 @@ import { UserListComponent } from './components/user-list/user-list.component';
     ],
     declarations: [
         UserComponent,
-        UserListComponent
+        UserListComponent,
+        AddUserComponent
     ],
     providers: [
         ModelService

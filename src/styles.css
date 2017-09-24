@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+.page-container{
+  margin: 50px 0 200px 0;
+}
+.actionbar{
+  border-bottom: 1px solid #000;
+  margin-bottom: 20px;
+  padding: 10px 0px;
+}
+.rfloat{
+  float: right;
+}
+.lfloat{
+  float: left
+}
+.page-title{
+  border-bottom: 1px solid #000;
+  margin: 5px 0;
+}
+.page-content{
+  margin: 20px 0;
+}
