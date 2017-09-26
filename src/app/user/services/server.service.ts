@@ -8,10 +8,12 @@ export class ServerService {
     
     private headers: Headers = new Headers({ 'Content-Type': 'application/json' });
     
+    private WSURL_USERS: string = 'https://angular-demo-netai.c9users.io/assets/demo_json/users.json';
+    
     constructor (private http: Http) {}
     
-    public fetchData(): Observable<any>  {
-        return this.http.get(this.fetch_record_url)
+    public getAllUsers(): Observable<any>  {
+        return this.http.get(this.WSURL_USERS)
             .map((response: Response) => {
                 try {
                     return response.json();
@@ -20,35 +22,8 @@ export class ServerService {
                 }
             })
             .catch((serverError: Response) => {
-                try {
-                    return Observable.throw(`${serverError._body}`)
-                } catch (e) {
-                    return Observable.throw(`${serverError}`)
-                }
+                return Observable.throw(`${serverError}`)
             })
     }
-    
-    /*
-    this.serverServices.getPatientDocuments(this.modalServices.documentViewerMRN)
-      .subscribe(
-        returnedDocuments => {
-          for (var key in returnedDocuments) {
-            if (!!returnedDocuments[key]['creationDate']) {
-             returnedDocuments[key]['creationDate'] = this.helperServices.convertDate(returnedDocuments[key]['creationDate']);
-            }
-            if (!!returnedDocuments[key]['documentDate']) {
-               returnedDocuments[key]['documentDate'] = this.helperServices.convertDate(returnedDocuments[key]['documentDate']);
-            }
-            this.documents.push(returnedDocuments[key])
-            this.filteredDocuments.push(returnedDocuments[key])
-          }
-          this.getFilters(this.documents);
-          this.handleSortClick('documentDate')
-        },
-        error => {
-          this.helperServices.displayErrorModal('Error fetching patient documents.', error);
-        }
-      )
-      */
     
 }

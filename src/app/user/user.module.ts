@@ -4,14 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { ModelService } from './services/model.service';
-//import { ServerService } from './service/server.service';
-
 import { routing } from './user.routing';
 import { UserComponent } from './user.component';
 
-import { UserListComponent } from './components/user-list/user-list.component';
-import { AddUserComponent } from './components/add-user/add-user.component';
+import { ModelService, ServerService, UserService } from './services';
+import { UserListComponent, AddUserComponent } from './components';
 
 @NgModule({
     imports: [
@@ -26,7 +23,9 @@ import { AddUserComponent } from './components/add-user/add-user.component';
         AddUserComponent
     ],
     providers: [
-        ModelService
+        ModelService,
+        ServerService,
+        UserService
     ],
     exports: [UserComponent]
 })

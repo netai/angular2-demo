@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 
-import { UserModel } from '../../models/user.model';
-import { ModelService } from '../../services/model.service';
+import { UserModel } from '../../models';
+import { ModelService } from '../../services';
 
 @Component({
 	moduleId: module.id,
@@ -14,9 +14,9 @@ export class UserListComponent implements OnInit{
 	public users: UserModel[] = [];
 
     constructor(private ms: ModelService){
-    	this.users = ms.us.users;
+    	this.users = ms.userService.users;
     }
-
-		ngOnInit(){}
+    
+    ngOnInit(){}
 
 }
