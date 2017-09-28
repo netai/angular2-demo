@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ModelService } from './services/model.service';
-//import { ServerService } from './service/server.service';
+import { ServerService } from './services/server.service';
 
 import { routing } from './user.routing';
 import { UserComponent } from './user.component';
@@ -26,7 +26,8 @@ import { AddUserComponent } from './components/add-user/add-user.component';
         AddUserComponent
     ],
     providers: [
-        ModelService
+        ModelService,
+        ServerService
     ],
     exports: [UserComponent]
 })
