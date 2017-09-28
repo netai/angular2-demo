@@ -1,0 +1,16 @@
+[
+    {
+        "firstname": "Ram",
+        "lastname": "Das",
+        "phone": "1234567890",
+        "city": "kolkata",
+        "age": 20
+    },
+    {
+        "firstname": "Netai",
+        "lastname": "Nayek",
+        "phone": "9734463187",
+        "city": "arambagh",
+        "age": 60
+    }
+]

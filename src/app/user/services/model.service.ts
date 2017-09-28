@@ -1,7 +1,11 @@
+import { Injectable } from '@angular/core';
+
 import { UserService } from './user.service';
 
+@Injectable()
 export class ModelService {
-    public us: UserService = new UserService();
 
-    constructor(){}
+    constructor(public userService: UserService){
+        
+    }
 }

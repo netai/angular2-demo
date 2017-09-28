@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 
-import { UserModel } from '../../models/user.model';
-import { ModelService } from '../../services/model.service';
+import { UserModel } from '../../models';
+import { ModelService } from '../../services';
 
 @Component({
   moduleId: module.id,
@@ -18,8 +18,8 @@ export class AddUserComponent implements OnInit{
   ngOnInit(){}
 
   public addUser(): void {
-    this.ms.us.users.push(new UserModel(this.user));
-    console.log(this.ms.us.users);
+    this.ms.userService.users.push(new UserModel(this.user));
+    console.log(this.ms.userService.users);
     window.location.href = '#/';
   }
 

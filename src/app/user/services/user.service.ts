@@ -1,29 +1,25 @@
-import { UserModel } from '../models/user.model';
+import { Injectable } from '@angular/core';
 
+import { UserModel } from '../models';
+import { ServerService } from './server.service';
+
+@Injectable()
 export class UserService {
 
-    public users: UserModel[];
+    public users: UserModel[] = [];
 
-    constructor(){
-      this.users = [
-        new UserModel(
-          {
-          firstname: 'Ram',
-          lastname: 'Das',
-          phone: '1234567890',
-          city: 'kolkata',
-          age: 20
+    constructor(private serverService: ServerService){
+      this.serverService.getAllUsers()
+        .subscribe(
+          users => {
+            for(let idx in users){
+              this.users.push(new UserModel(users[idx]));
+            }
+            console.log(this.users);
+          },
+          error => {
+            console.log('Error fetching users data', error);
           }
-        ),
-        new UserModel(
-          {
-              firstname: 'Ram',
-              lastname: 'Das',
-              phone: '1234567890',
-              city: 'Kolkata',
-              age: 20
-          }
-        )
-      ];
+        );
     }
 }

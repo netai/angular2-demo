@@ -10,8 +10,8 @@ import { ServerService } from './services/server.service';
 import { routing } from './user.routing';
 import { UserComponent } from './user.component';
 
-import { UserListComponent } from './components/user-list/user-list.component';
-import { AddUserComponent } from './components/add-user/add-user.component';
+import { ModelService, ServerService, UserService } from './services';
+import { UserListComponent, AddUserComponent } from './components';
 
 @NgModule({
     imports: [
@@ -27,7 +27,8 @@ import { AddUserComponent } from './components/add-user/add-user.component';
     ],
     providers: [
         ModelService,
-        ServerService
+        ServerService,
+        UserService
     ],
     exports: [UserComponent]
 })
