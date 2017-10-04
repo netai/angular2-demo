@@ -1,6 +1,6 @@
-# angular-demo
+# angular2-demo
 
-angular demo project and basic structure
+angular 2 demo project and basic structure
 
 for deploy this project please follow below steps
 
