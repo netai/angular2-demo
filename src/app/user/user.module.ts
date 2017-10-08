@@ -4,9 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { ModelService } from './services/model.service';
-import { ServerService } from './services/server.service';
-
 import { routing } from './user.routing';
 import { UserComponent } from './user.component';
 

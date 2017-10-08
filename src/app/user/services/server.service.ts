@@ -5,14 +5,16 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ServerService {
-    
+
     private headers: Headers = new Headers({ 'Content-Type': 'application/json' });
-    
-    private WSURL_USERS: string = 'https://angular-demo-netai.c9users.io/assets/demo_json/users.json';
-    
+
+    //private WSURL_USERS: string = 'https://angular-demo-netai.c9users.io/assets/demo_json/users.json';
+    private WSURL_USERS: string = 'http://localhost:4200/assets/demo_json/users.json';
+
     constructor (private http: Http) {}
-    
+
     public getAllUsers(): Observable<any>  {
+        console.log('get user data from server.')
         return this.http.get(this.WSURL_USERS)
             .map((response: Response) => {
                 try {
@@ -25,5 +27,5 @@ export class ServerService {
                 return Observable.throw(`${serverError}`)
             })
     }
-    
+
 }
